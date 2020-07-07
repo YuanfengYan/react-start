@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import { HashRouter } from "react-router-dom";//路由
+import { renderRoutes } from "react-router-config";//路由
+import routes from "./routes/index.js";//路由配置
+
+import store from "./store/index";
+
+import './App.css'
+import './lib/mock'
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   HashRouter
+// } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Provider store={store}>
+      <HashRouter>
+        {renderRoutes(routes)}
+      </HashRouter>
+    // </Provider>
   );
 }
 
