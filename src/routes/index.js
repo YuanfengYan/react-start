@@ -7,6 +7,7 @@ import HomeComponent from "../pages/home/index"
 import NoteComponent from "../pages/note/index"
 
 import ContextApi from "../demopages/contextApi/index"
+import CounterRedux from "../demopages/counterRedux/index"
 
 const Root = ({ route }) => (
   <div>
@@ -40,6 +41,10 @@ export default  [
           {
             path: "/demopages/contextApi",
             component: ContextApi,
+          },
+          {
+            path: "/demopages/CounterRedux",
+            component: CounterRedux,
           },
           
         ]
