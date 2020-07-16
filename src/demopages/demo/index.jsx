@@ -12,7 +12,6 @@ function ContextApi(){
   return ( <div>
  {value}
   </div>)
-  
 }
  
 export default ContextApi;

@@ -20,8 +20,23 @@ const counter = (state=initstate,action)=>{
   }
   return state
 }
+const counter2 = (state=initstate,action)=>{
+  switch(action.type){
+      case 'AD':
+        return {
+          count:state.count+2
+        }
+      case "MINU":
+        return {
+          count:state.count-2
+        }
+      default:
+        break
+  }
+  return state
+}
 // 创建store
-const store = createStore(counter)
+const store = createStore(combineReducers({counter}))
 // 创建action
 function add(){
   return {
@@ -31,7 +46,7 @@ function add(){
 }
 function minus(){
   return {
-    type:"MINUS",
+    type:"MINUS2",
     text:'减1'
   }
 }
