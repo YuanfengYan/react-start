@@ -3,7 +3,9 @@ import http from '../../lib/http.js'
 import './index.css'
 
 const ThemeContext = React.createContext({
-  theme:'dark',toggle:() => {},
+  theme:'dark',
+  myname:'yanyuanfeng',
+  toggle:() => {},
 });
 
 // class方式
@@ -57,12 +59,15 @@ function Mybox(props){
   let value = useContext(ThemeContext)
   useEffect(() => {
     console.log('Mybox')
+    console.log('props',props)
+
   }, [])
-  return ( <div>
+  return ( 
+  <div>
     <div className="default" onClick={value.toggle}>
      主题切换-hook 
     </div>
-    <div className={value.theme}>主题-{value.theme}</div>
+    <div className={value.theme}>主题-{value.theme}</div> 
   </div>)
 
 }
@@ -79,7 +84,7 @@ function ContextApi(){
   }
   return (
     <ThemeContext.Provider value={state}>
-      <Mybox></Mybox>
+      <Mybox test="xxxx"></Mybox>
     </ThemeContext.Provider>
   )
 }
